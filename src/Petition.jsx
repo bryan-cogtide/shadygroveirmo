@@ -432,13 +432,6 @@ export default function Petition() {
                     <span style={{ fontSize: 15, fontWeight: "bold", color: "#1a1a1a" }}>
                       {sig.name}
                     </span>
-                    <span style={{
-                      fontSize: 12,
-                      color: "#6a5a3a",
-                      marginLeft: 10,
-                    }}>
-                      {sig.address}
-                    </span>
                   </div>
                   <div style={{
                     marginLeft: "auto",
