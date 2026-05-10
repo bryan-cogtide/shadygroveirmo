@@ -144,7 +144,7 @@ export default function Petition() {
               {sigCount === 1 ? "neighbor has signed" : "neighbors have signed"}
             </div>
             <div style={{ fontSize: 12, color: "#a8c5b0", marginTop: 2 }}>
-              Help us reach 50 signatures before Monday's hearing
+              Help us reach 500 signatures before Monday's hearing
             </div>
           </div>
           <div style={{
@@ -157,12 +157,49 @@ export default function Petition() {
           }}>
             <div style={{
               height: "100%",
-              width: `${Math.min(100, (sigCount / 50) * 100)}%`,
+              width: `${Math.min(100, (sigCount / 500) * 100)}%`,
               background: "#d4a843",
               borderRadius: 3,
               transition: "width 0.5s ease",
             }} />
           </div>
+        </div>
+
+        {/* What We've Learned */}
+        <div style={{
+          background: "#1c3a2a",
+          padding: "24px 28px",
+          marginBottom: 32,
+        }}>
+          <div style={{
+            fontSize: 11,
+            letterSpacing: "0.15em",
+            textTransform: "uppercase",
+            color: "#d4a843",
+            marginBottom: 16,
+            fontFamily: "'Georgia', serif",
+          }}>
+            What We've Learned
+          </div>
+          <ul style={{
+            margin: 0,
+            paddingLeft: 20,
+            listStyleType: "'\u2022  '",
+            color: "#f5f0e8",
+            fontSize: 15,
+            lineHeight: 1.75,
+            fontFamily: "'Georgia', serif",
+          }}>
+            <li style={{ marginBottom: 10 }}>
+              The Traffic Impact Analysis (TIA) is not complete. The Town confirmed this in writing — yet Monday's hearing proceeds anyway.
+            </li>
+            <li style={{ marginBottom: 10 }}>
+              Lexington-Richland School District 5 has not been formally contacted about this proposal. Also confirmed in writing.
+            </li>
+            <li>
+              The property is currently zoned Neighborhood Commercial. This is a significant rezoning, not a minor variance.
+            </li>
+          </ul>
         </div>
 
         {/* Petition text */}
@@ -187,6 +224,49 @@ export default function Petition() {
             whiteSpace: "pre-line",
           }}>
             {PETITION_TEXT}
+          </div>
+        </div>
+
+        {/* Hearing Call to Action */}
+        <div style={{
+          background: "#d4a843",
+          padding: "28px 28px 24px",
+          marginBottom: 32,
+          textAlign: "center",
+        }}>
+          <div style={{
+            fontSize: "clamp(22px, 5vw, 30px)",
+            fontWeight: "bold",
+            color: "#1c3a2a",
+            marginBottom: 8,
+            fontFamily: "'Georgia', serif",
+          }}>
+            Come to the Hearing
+          </div>
+          <div style={{
+            fontSize: 17,
+            color: "#1c3a2a",
+            fontWeight: "bold",
+            marginBottom: 4,
+            fontFamily: "'Georgia', serif",
+          }}>
+            Monday, May 11 · 6:00 PM
+          </div>
+          <div style={{
+            fontSize: 15,
+            color: "#2d5c42",
+            marginBottom: 12,
+            fontFamily: "'Georgia', serif",
+          }}>
+            Irmo Municipal Building, 7300 Woodrow Street
+          </div>
+          <div style={{
+            fontSize: 13,
+            color: "#3a5a3a",
+            fontStyle: "italic",
+            fontFamily: "'Georgia', serif",
+          }}>
+            Your presence matters as much as your signature.
           </div>
         </div>
 
