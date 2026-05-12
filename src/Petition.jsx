@@ -293,7 +293,7 @@ export default function Petition() {
             marginBottom: 8,
             fontFamily: "'Georgia', serif",
           }}>
-            What\u2019s Happening \u2014 Stay Informed
+            What’s Happening — Stay Informed
           </div>
           <div style={{
             fontSize: 13,
