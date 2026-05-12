@@ -75,6 +75,57 @@ export default function Petition() {
       fontFamily: "'Georgia', 'Times New Roman', serif",
       color: "#1a1a1a",
     }}>
+      {/* What Happened Banner */}
+      <div style={{
+        background: "#d4a843",
+        padding: "28px 24px",
+        textAlign: "center",
+      }}>
+        <div style={{ maxWidth: 720, margin: "0 auto" }}>
+          <div style={{
+            fontSize: "clamp(24px, 5vw, 36px)",
+            fontWeight: "bold",
+            color: "#1c3a2a",
+            marginBottom: 12,
+            fontFamily: "'Georgia', serif",
+          }}>
+            The Planning Commission Approved It.
+          </div>
+          <div style={{
+            fontSize: 16,
+            color: "#1c3a2a",
+            lineHeight: 1.6,
+            marginBottom: 20,
+            fontFamily: "'Georgia', serif",
+          }}>
+            The vote was unanimous. Now it goes to Town Council — and that's where this is decided.<br />
+            Three opportunities remain to stop it.
+          </div>
+          <div style={{
+            fontSize: 15,
+            color: "#1c3a2a",
+            lineHeight: 2,
+            fontFamily: "'Georgia', serif",
+            textAlign: "left",
+            maxWidth: 480,
+            margin: "0 auto",
+          }}>
+            <div>◦ <strong>Developer Drop-In:</strong> May 18, 4:30–6:30 PM</div>
+            <div>◦ <strong>Town Council First Reading:</strong> May 19, 6:00 PM</div>
+            <div>◦ <strong>Town Council Final Vote & Public Hearing:</strong> June 16, 6:00 PM</div>
+          </div>
+          <div style={{
+            fontSize: 13,
+            color: "#2d5c42",
+            marginTop: 16,
+            fontStyle: "italic",
+            fontFamily: "'Georgia', serif",
+          }}>
+            All meetings at Irmo Municipal Building, 7300 Woodrow Street
+          </div>
+        </div>
+      </div>
+
       {/* Header */}
       <div style={{
         background: "#1c3a2a",
@@ -104,8 +155,9 @@ export default function Petition() {
               cursor: "default",
             }}
           >
-            Oppose Premature Approval of the<br />
+            Stop the Premature Approval of the<br />
             <em style={{ color: "#d4a843" }}>American Community Developers Project</em>
+            <br /><span style={{ fontSize: "clamp(16px, 3vw, 22px)", color: "#a8c5b0" }}>— Tell Town Council No.</span>
           </h1>
           <div style={{
             fontSize: 13,
@@ -144,7 +196,7 @@ export default function Petition() {
               {sigCount === 1 ? "neighbor has signed" : "neighbors have signed"}
             </div>
             <div style={{ fontSize: 12, color: "#a8c5b0", marginTop: 2 }}>
-              Help us reach 500 signatures before Monday's hearing
+              Help us reach 1,000 signatures before Town Council votes
             </div>
           </div>
           <div style={{
@@ -157,7 +209,7 @@ export default function Petition() {
           }}>
             <div style={{
               height: "100%",
-              width: `${Math.min(100, (sigCount / 500) * 100)}%`,
+              width: `${Math.min(100, (sigCount / 1000) * 100)}%`,
               background: "#d4a843",
               borderRadius: 3,
               transition: "width 0.5s ease",
@@ -191,13 +243,19 @@ export default function Petition() {
             fontFamily: "'Georgia', serif",
           }}>
             <li style={{ marginBottom: 10 }}>
-              The Traffic Impact Analysis (TIA) is not complete. The Town confirmed this in writing — yet Monday's hearing proceeds anyway.
+              The Traffic Impact Analysis is NOT complete — yet the commission approved it anyway.
             </li>
             <li style={{ marginBottom: 10 }}>
-              Lexington-Richland School District 5 has not been formally contacted about this proposal. Also confirmed in writing.
+              Lexington-Richland School District 5 has NOT been formally contacted. No condition requires it.
+            </li>
+            <li style={{ marginBottom: 10 }}>
+              The only traffic condition requires the developer meet SCDOT minimums — the legal floor for any project anywhere. No specific road improvements. No binding mitigation.
+            </li>
+            <li style={{ marginBottom: 10 }}>
+              The developer's own application listed 120 senior units and 50 single-family homes. The approved conditions say 90 and 40. Numbers changed in private negotiations without public input.
             </li>
             <li>
-              The property is currently zoned Neighborhood Commercial. This is a significant rezoning, not a minor variance.
+              The commission approved this partly on the characterization that it's a senior housing project. Phase 1 is 200 workforce apartments. Senior housing is Phase 2 — the smaller component.
             </li>
           </ul>
         </div>
@@ -238,19 +296,20 @@ export default function Petition() {
             fontSize: "clamp(22px, 5vw, 30px)",
             fontWeight: "bold",
             color: "#1c3a2a",
-            marginBottom: 8,
+            marginBottom: 12,
             fontFamily: "'Georgia', serif",
           }}>
-            Come to the Hearing
+            Make Your Voice Heard at Town Council
           </div>
           <div style={{
-            fontSize: 17,
+            fontSize: 16,
             color: "#1c3a2a",
-            fontWeight: "bold",
-            marginBottom: 4,
+            lineHeight: 2,
             fontFamily: "'Georgia', serif",
+            marginBottom: 8,
           }}>
-            Monday, May 11 · 6:00 PM
+            <div><strong>Town Council First Reading:</strong> May 19 · 6:00 PM</div>
+            <div><strong>Town Council Final Vote:</strong> June 16 · 6:00 PM</div>
           </div>
           <div style={{
             fontSize: 15,
@@ -266,7 +325,7 @@ export default function Petition() {
             fontStyle: "italic",
             fontFamily: "'Georgia', serif",
           }}>
-            Your presence matters as much as your signature.
+            This is not over. Council makes the final call.
           </div>
         </div>
 
