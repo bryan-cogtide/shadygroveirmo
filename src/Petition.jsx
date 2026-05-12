@@ -236,49 +236,6 @@ export default function Petition() {
           </div>
         </div>
 
-        {/* What We've Learned */}
-        <div style={{
-          background: "#1c3a2a",
-          padding: "24px 28px",
-          marginBottom: 32,
-        }}>
-          <div style={{
-            fontSize: 11,
-            letterSpacing: "0.15em",
-            textTransform: "uppercase",
-            color: "#d4a843",
-            marginBottom: 16,
-            fontFamily: "'Georgia', serif",
-          }}>
-            What We've Learned
-          </div>
-          <ul style={{
-            margin: 0,
-            paddingLeft: 20,
-            listStyleType: "'\u2022  '",
-            color: "#f5f0e8",
-            fontSize: 15,
-            lineHeight: 1.75,
-            fontFamily: "'Georgia', serif",
-          }}>
-            <li style={{ marginBottom: 10 }}>
-              The Traffic Impact Analysis is NOT complete — yet the commission approved it anyway.
-            </li>
-            <li style={{ marginBottom: 10 }}>
-              Lexington-Richland School District 5 has NOT been formally contacted. No condition requires it.
-            </li>
-            <li style={{ marginBottom: 10 }}>
-              The only traffic condition requires the developer meet SCDOT minimums — the legal floor for any project anywhere. No specific road improvements. No binding mitigation.
-            </li>
-            <li style={{ marginBottom: 10 }}>
-              The developer's own application listed 120 senior units and 50 single-family homes. The approved conditions say 90 and 40. Numbers changed in private negotiations without public input.
-            </li>
-            <li>
-              The commission approved this partly on the characterization that it's a senior housing project. Phase 1 is 200 workforce apartments. Senior housing is Phase 2 — the smaller component.
-            </li>
-          </ul>
-        </div>
-
         {/* Updates */}
         <div style={{
           background: "#1c3a2a",
@@ -347,6 +304,74 @@ export default function Petition() {
               </div>
             ))}
           </div>
+          <div style={{
+            marginTop: 20,
+            paddingTop: 16,
+            borderTop: "1px solid #2d5c42",
+            fontSize: 13,
+            color: "#a8c5b0",
+            fontFamily: "'Georgia', serif",
+          }}>
+            Have updates to share? Email{" "}
+            <a
+              href="mailto:hello@shadygroveirmo.org"
+              style={{ color: "#d4a843", textDecoration: "underline", textUnderlineOffset: 3 }}
+            >
+              hello@shadygroveirmo.org
+            </a>{" "}
+            or check our{" "}
+            <a
+              href="https://www.facebook.com/groups/2013848222539737"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#d4a843", textDecoration: "underline", textUnderlineOffset: 3 }}
+            >
+              Facebook Group
+            </a>
+          </div>
+        </div>
+
+        {/* What We've Learned */}
+        <div style={{
+          background: "#1c3a2a",
+          padding: "24px 28px",
+          marginBottom: 32,
+        }}>
+          <div style={{
+            fontSize: 11,
+            letterSpacing: "0.15em",
+            textTransform: "uppercase",
+            color: "#d4a843",
+            marginBottom: 16,
+            fontFamily: "'Georgia', serif",
+          }}>
+            What We've Learned
+          </div>
+          <ul style={{
+            margin: 0,
+            paddingLeft: 20,
+            listStyleType: "'\u2022  '",
+            color: "#f5f0e8",
+            fontSize: 15,
+            lineHeight: 1.75,
+            fontFamily: "'Georgia', serif",
+          }}>
+            <li style={{ marginBottom: 10 }}>
+              The Traffic Impact Analysis is NOT complete — yet the commission approved it anyway.
+            </li>
+            <li style={{ marginBottom: 10 }}>
+              Lexington-Richland School District 5 has NOT been formally contacted. No condition requires it.
+            </li>
+            <li style={{ marginBottom: 10 }}>
+              The only traffic condition requires the developer meet SCDOT minimums — the legal floor for any project anywhere. No specific road improvements. No binding mitigation.
+            </li>
+            <li style={{ marginBottom: 10 }}>
+              The developer's own application listed 120 senior units and 50 single-family homes. The approved conditions say 90 and 40. Numbers changed in private negotiations without public input.
+            </li>
+            <li>
+              The commission approved this partly on the characterization that it's a senior housing project. Phase 1 is 200 workforce apartments. Senior housing is Phase 2 — the smaller component.
+            </li>
+          </ul>
         </div>
 
         {/* Petition text */}
@@ -673,7 +698,22 @@ export default function Petition() {
           color: "#9a8a6a",
           lineHeight: 1.6,
         }}>
-          <strong>Next Steps:</strong> Planning Commission & Public Hearing — Mon. May 11 at 6:00 PM · Public Meeting — May 18, 4:30–6:30 PM · Town Council 1st Reading — May 19, 6:00 PM · All meetings at the Town of Irmo Municipal Building, 7300 Woodrow Street
+          <div>
+            <strong>Next Steps:</strong> Planning Commission & Public Hearing — Mon. May 11 at 6:00 PM · Public Meeting — May 18, 4:30–6:30 PM · Town Council 1st Reading — May 19, 6:00 PM · All meetings at the Town of Irmo Municipal Building, 7300 Woodrow Street
+          </div>
+          <div style={{ marginTop: 12, display: "flex", alignItems: "center", gap: 6 }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#9a8a6a" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
+            <a
+              href="https://www.facebook.com/groups/2013848222539737"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#9a8a6a", textDecoration: "underline", textUnderlineOffset: 2 }}
+            >
+              Join our Facebook Group
+            </a>
+          </div>
         </div>
       </div>
     </div>
