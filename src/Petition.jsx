@@ -183,7 +183,7 @@ export default function Petition() {
             color: "#a8c5b0",
             marginTop: 12,
           }}>
-            Planning Commission Hearing · Monday, May 11, 2026 · 6:00 PM
+            Town Council First Reading · Monday, May 19, 2026 · 6:00 PM
           </div>
         </div>
       </div>
@@ -699,7 +699,7 @@ export default function Petition() {
           lineHeight: 1.6,
         }}>
           <div>
-            <strong>Next Steps:</strong> Planning Commission & Public Hearing — Mon. May 11 at 6:00 PM · Public Meeting — May 18, 4:30–6:30 PM · Town Council 1st Reading — May 19, 6:00 PM · All meetings at the Town of Irmo Municipal Building, 7300 Woodrow Street
+            <strong>Next Steps:</strong> Developer Drop-In — May 18, 4:30–6:30 PM · Town Council First Reading — May 19, 6:00 PM · Town Council Final Vote & Public Hearing — June 16, 6:00 PM · All meetings at the Town of Irmo Municipal Building, 7300 Woodrow Street
           </div>
           <div style={{ marginTop: 12, display: "flex", alignItems: "center", gap: 6 }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="#9a8a6a" xmlns="http://www.w3.org/2000/svg">
