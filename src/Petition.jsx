@@ -9,6 +9,25 @@ import {
 } from "firebase/firestore";
 import { db } from "./firebase.js";
 
+const UPDATES = [
+  {
+    date: "May 11, 2026",
+    text: "The Planning Commission voted unanimously to recommend approval of Ordinance 26-12. The fight now moves to Town Council. Three opportunities remain to be heard: the Developer Drop-In (May 18), Town Council First Reading (May 19), and the Final Vote & Public Hearing (June 16).",
+  },
+  {
+    date: "May 11, 2026",
+    text: "WLTX covered tonight\u2019s hearing \u2014 the story led the 11:00 PM news.",
+    link: {
+      url: "https://www.wltx.com/article/news/local/irmo-residents-rally-against-proposed-200-unit-development/101-7f92bc69-9b43-4c4b-b1e6-9c0b4b0069de",
+      label: "Watch the story \u2192",
+    },
+  },
+  {
+    date: "May 8\u201311, 2026",
+    text: "Over 727 neighbors signed this petition in less than five days. The full signature list was presented to the Planning Commission in person tonight.",
+  },
+];
+
 const PETITION_TEXT = `We, the undersigned residents of the neighborhoods adjacent to the proposed American Community Developers project on the Irmo/Richland County border, respectfully request that the Town of Irmo Planning Commission require the following before approval of any zoning change:
 
 1. A completed, publicly available Traffic Impact Analysis (TIA)
@@ -258,6 +277,76 @@ export default function Petition() {
               The commission approved this partly on the characterization that it's a senior housing project. Phase 1 is 200 workforce apartments. Senior housing is Phase 2 — the smaller component.
             </li>
           </ul>
+        </div>
+
+        {/* Updates */}
+        <div style={{
+          background: "#1c3a2a",
+          padding: "24px 28px",
+          marginBottom: 32,
+        }}>
+          <div style={{
+            fontSize: 11,
+            letterSpacing: "0.15em",
+            textTransform: "uppercase",
+            color: "#d4a843",
+            marginBottom: 8,
+            fontFamily: "'Georgia', serif",
+          }}>
+            What\u2019s Happening \u2014 Stay Informed
+          </div>
+          <div style={{
+            fontSize: 13,
+            color: "#a8c5b0",
+            marginBottom: 20,
+            fontStyle: "italic",
+            fontFamily: "'Georgia', serif",
+          }}>
+            This page will be updated as the process moves forward. Bookmark it and check back often.
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
+            {UPDATES.map((update, i) => (
+              <div key={i} style={{
+                paddingLeft: 16,
+                borderLeft: "3px solid #d4a843",
+              }}>
+                <div style={{
+                  fontSize: 13,
+                  fontWeight: "bold",
+                  color: "#d4a843",
+                  marginBottom: 4,
+                  fontFamily: "'Georgia', serif",
+                }}>
+                  {update.date}
+                </div>
+                <div style={{
+                  fontSize: 15,
+                  color: "#f5f0e8",
+                  lineHeight: 1.65,
+                  fontFamily: "'Georgia', serif",
+                }}>
+                  {update.text}
+                  {update.link && (
+                    <>
+                      {" "}
+                      <a
+                        href={update.link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          color: "#d4a843",
+                          textDecoration: "underline",
+                          textUnderlineOffset: 3,
+                        }}
+                      >
+                        {update.link.label}
+                      </a>
+                    </>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Petition text */}
