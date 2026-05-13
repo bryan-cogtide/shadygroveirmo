@@ -28,6 +28,44 @@ const UPDATES = [
   },
 ];
 
+const COUNCIL_MEMBERS = [
+  {
+    name: "Bill Danielson",
+    title: "Mayor",
+    phone: "(803) 606-4991",
+    phoneLink: "tel:+18036064991",
+    email: "billdanielson@townofirmosc.com",
+  },
+  {
+    name: "Dr. Barb Waldman",
+    title: "Mayor Pro Tem",
+    phone: "(803) 319-2147",
+    phoneLink: "tel:+18033192147",
+    email: "barbwaldman@townofirmosc.com",
+  },
+  {
+    name: "Phyllis Coleman",
+    title: "Council Member",
+    phone: "(803) 629-1883",
+    phoneLink: "tel:+18036291883",
+    email: "phylliscoleman@townofirmosc.com",
+  },
+  {
+    name: "Gabriel Penfield",
+    title: "Council Member",
+    phone: "(803) 386-8531",
+    phoneLink: "tel:+18033868531",
+    email: "gabrielpenfield@townofirmosc.com",
+  },
+  {
+    name: "Mike Ward",
+    title: "Council Member",
+    phone: "(803) 602-4113",
+    phoneLink: "tel:+18036024113",
+    email: "mikeward@townofirmosc.com",
+  },
+];
+
 const PETITION_TEXT = `We, the undersigned residents of the neighborhoods adjacent to the proposed American Community Developers project on the Irmo/Richland County border, respectfully request that the Town of Irmo Planning Commission require the following before approval of any zoning change:
 
 1. A completed, publicly available Traffic Impact Analysis (TIA)
@@ -328,6 +366,105 @@ export default function Petition() {
             >
               Facebook Group
             </a>
+          </div>
+        </div>
+
+        {/* Contact Town Council */}
+        <div style={{
+          background: "#1c3a2a",
+          padding: "24px 28px",
+          marginBottom: 32,
+        }}>
+          <div style={{
+            fontSize: 11,
+            letterSpacing: "0.15em",
+            textTransform: "uppercase",
+            color: "#d4a843",
+            marginBottom: 16,
+            fontFamily: "'Georgia', serif",
+          }}>
+            Contact Town Council — Before May 19th
+          </div>
+
+          <div style={{
+            fontSize: 15,
+            color: "#f5f0e8",
+            lineHeight: 1.65,
+            marginBottom: 20,
+            fontFamily: "'Georgia', serif",
+          }}>
+            Five council members will vote on this development. Email them. Call them. It takes ten minutes and it matters.
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 20 }}>
+            {COUNCIL_MEMBERS.map((member, i) => (
+              <div
+                key={i}
+                style={{
+                  background: "#0d1f16",
+                  padding: "14px 16px",
+                  borderLeft: "3px solid #d4a843",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 6,
+                }}
+              >
+                <div style={{
+                  fontSize: 14,
+                  fontWeight: "bold",
+                  color: "#f5f0e8",
+                  fontFamily: "'Georgia', serif",
+                }}>
+                  {member.name}
+                </div>
+                <div style={{
+                  fontSize: 12,
+                  color: "#a8c5b0",
+                  fontFamily: "'Georgia', serif",
+                }}>
+                  {member.title}
+                </div>
+                <div style={{
+                  display: "flex",
+                  gap: 16,
+                  fontSize: 13,
+                  marginTop: 4,
+                }}>
+                  <a
+                    href={member.phoneLink}
+                    style={{
+                      color: "#d4a843",
+                      textDecoration: "none",
+                      fontFamily: "'Georgia', serif",
+                    }}
+                  >
+                    {member.phone}
+                  </a>
+                  <a
+                    href={`mailto:${member.email}`}
+                    style={{
+                      color: "#d4a843",
+                      textDecoration: "underline",
+                      textUnderlineOffset: 3,
+                      fontFamily: "'Georgia', serif",
+                    }}
+                  >
+                    {member.email}
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{
+            fontSize: 14,
+            color: "#f5f0e8",
+            lineHeight: 1.65,
+            fontFamily: "'Georgia', serif",
+            paddingTop: 16,
+            borderTop: "1px solid #2d5c42",
+          }}>
+            Be brief, be respectful, be specific. Tell them you live here and you're watching this vote.
           </div>
         </div>
 
