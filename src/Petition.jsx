@@ -5,7 +5,7 @@ const UPDATES = [
   },
   {
     date: "May 11, 2026",
-    text: "The Planning Commission voted unanimously to recommend approval of Ordinance 26-12. The fight now moves to Town Council. Three opportunities remain to be heard: the Developer Drop-In (May 18), Town Council First Reading (May 19), and the Final Vote & Public Hearing (June 16).",
+    text: "The Planning Commission voted unanimously to recommend approval. The community responded \u2014 and won.",
   },
   {
     date: "May 11, 2026",
@@ -364,7 +364,7 @@ export default function Petition() {
             marginBottom: 16,
             fontFamily: "'Georgia', serif",
           }}>
-            What We've Learned
+            How We Won \u2014 What The Record Shows
           </div>
           <ul style={{
             margin: 0,
@@ -393,30 +393,36 @@ export default function Petition() {
           </ul>
         </div>
 
-        {/* Petition text */}
-        <div style={{
+        {/* Petition text - collapsed */}
+        <details style={{
           borderLeft: "3px solid #8b6914",
           paddingLeft: 20,
           marginBottom: 36,
         }}>
-          <div style={{
+          <summary style={{
             fontSize: 11,
             letterSpacing: "0.15em",
             textTransform: "uppercase",
             color: "#7a6a40",
-            marginBottom: 12,
+            cursor: "pointer",
+            listStyle: "none",
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
           }}>
-            Petition Statement
-          </div>
+            <span style={{ fontSize: 14, transition: "transform 0.2s" }}>\u25B6</span>
+            About This Campaign
+          </summary>
           <div style={{
             fontSize: 15,
             lineHeight: 1.75,
             color: "#2a2a2a",
             whiteSpace: "pre-line",
+            marginTop: 12,
           }}>
             {PETITION_TEXT}
           </div>
-        </div>
+        </details>
 
         {/* Community Hub CTA */}
         <div style={{
@@ -443,6 +449,44 @@ export default function Petition() {
             margin: "0 auto",
           }}>
             We built something real in two weeks — 1,286 signatures, media coverage, direct relationships with elected officials, and a platform that didn't exist before. We're turning this site into a permanent community hub for zoning actions, development news, and civic updates in the Irmo/Shady Grove corridor. Stay connected. Stay informed. When the next thing comes up — and it will — we'll be ready.
+          </div>
+        </div>
+
+        {/* Facebook Group - prominent */}
+        <div style={{
+          background: "#1c3a2a",
+          padding: "20px 28px",
+          marginBottom: 32,
+          display: "flex",
+          alignItems: "center",
+          gap: 14,
+        }}>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#d4a843" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+          </svg>
+          <div>
+            <a
+              href="https://www.facebook.com/groups/2013848222539737"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: "#f5f0e8",
+                textDecoration: "none",
+                fontSize: 16,
+                fontWeight: "bold",
+                fontFamily: "'Georgia', serif",
+              }}
+            >
+              Join Our Facebook Group
+            </a>
+            <div style={{
+              fontSize: 13,
+              color: "#a8c5b0",
+              marginTop: 4,
+              fontFamily: "'Georgia', serif",
+            }}>
+              Where neighbors share updates, organize, and stay connected between meetings.
+            </div>
           </div>
         </div>
 
@@ -588,20 +632,9 @@ export default function Petition() {
           fontSize: 11,
           color: "#9a8a6a",
           lineHeight: 1.6,
+          textAlign: "center",
         }}>
-          <div style={{ marginTop: 0, display: "flex", alignItems: "center", gap: 6 }}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="#9a8a6a" xmlns="http://www.w3.org/2000/svg">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-            </svg>
-            <a
-              href="https://www.facebook.com/groups/2013848222539737"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: "#9a8a6a", textDecoration: "underline", textUnderlineOffset: 2 }}
-            >
-              Join our Facebook Group
-            </a>
-          </div>
+          shadygroveirmo.org · A neighborhood project
         </div>
       </div>
     </div>
