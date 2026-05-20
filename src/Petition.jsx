@@ -364,7 +364,7 @@ export default function Petition() {
             marginBottom: 16,
             fontFamily: "'Georgia', serif",
           }}>
-            How We Won \u2014 What The Record Shows
+            How We Won — What The Record Shows
           </div>
           <ul style={{
             margin: 0,
@@ -410,7 +410,7 @@ export default function Petition() {
             alignItems: "center",
             gap: 8,
           }}>
-            <span style={{ fontSize: 14, transition: "transform 0.2s" }}>\u25B6</span>
+            <span style={{ fontSize: 14, transition: "transform 0.2s" }}>▶</span>
             About This Campaign
           </summary>
           <div style={{
