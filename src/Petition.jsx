@@ -1,4 +1,19 @@
+import { useState } from "react";
+
 const UPDATES = [
+  {
+    date: "May 20, 2026",
+    heading: "Richland County's New Comprehensive Plan — What You Should Know",
+    text: "While our community was focused on last night's Irmo Town Council vote, Richland County held a Special Called meeting to take its third step toward adopting a new comprehensive plan — the governing document that will shape land use decisions across the county for the next decade.\n\nWe've now had a chance to review both the current 2015 plan and the proposed 2025 draft side by side. The differences are significant and deserve community attention.",
+    expandedText: "The maps tell the story.\n\nThe 2015 Future Land Use Map shows street names throughout — you can find your road, your property, your neighborhood, and know exactly what land use designation applies. Boundaries are clear. Geography is anchored.\n\nThe proposed 2025 \"Conservation and Development Map\" shows no street names. Major route numbers only. Land use boundaries float without geographic reference. Large areas — particularly around lake properties — carry no designation at all, left as white margins open to staff interpretation. When a developer asks for a rezoning in one of these areas, staff will decide whether it \"complies\" with the plan. Without clear boundaries tied to real roads, that's a judgment call with no anchor.\n\nRural areas in northwest Richland County — our corridor — are reclassified in ways that invite higher density development. The new Broad River Road Mixed-Use Corridor designation runs directly through this area.\n\nThe process itself raised red flags. The public hearing for this plan was advertised at 6pm. The agenda, released less than 24 hours before the meeting, moved the start time to 5pm. Sign-up sheets for public comment were pulled at 5:15pm. Some residents who showed up at the advertised time were unable to participate.\n\nThe third and final reading is tentatively scheduled for June 2nd. That is less than two weeks away.\n\nIf you have concerns about how this plan affects your property or your community, contact Richland County Council. Jason Branham is our district representative.",
+    expandedLinks: [
+      {
+        url: "mailto:branham.jason@richlandcountysc.gov",
+        label: "branham.jason@richlandcountysc.gov",
+      },
+    ],
+    expandedFooter: "We will continue tracking this at shadygroveirmo.org.",
+  },
   {
     date: "May 19, 2026",
     text: "Town Council voted 4-1 to reject Ordinance 26-12 on first reading. The proposed development is dead in its current form. Thank you to everyone who signed, showed up, and made your voice heard.",
@@ -67,6 +82,135 @@ const PETITION_TEXT = `We, the undersigned residents of the neighborhoods adjace
 4. A thorough review of the project's compatibility with the existing low-density residential character of the surrounding area
 
 A development of this scale — 330 units including 200 workforce apartments, 90 senior duplexes, and 40 single-family homes — represents a fundamental change to our neighborhood. We ask that the Town proceed with caution and ensure all impact studies are complete before any approvals are granted.`;
+
+function UpdateEntry({ update }) {
+  const [expanded, setExpanded] = useState(false);
+  const hasExpanded = !!update.expandedText;
+
+  return (
+    <div style={{
+      paddingLeft: 16,
+      borderLeft: "3px solid #d4a843",
+    }}>
+      <div style={{
+        fontSize: 13,
+        fontWeight: "bold",
+        color: "#d4a843",
+        marginBottom: 4,
+        fontFamily: "'Georgia', serif",
+      }}>
+        {update.date}
+      </div>
+      {update.heading && (
+        <div style={{
+          fontSize: 17,
+          fontWeight: "bold",
+          color: "#f5f0e8",
+          marginBottom: 8,
+          fontFamily: "'Georgia', serif",
+        }}>
+          {update.heading}
+        </div>
+      )}
+      <div style={{
+        fontSize: 15,
+        color: "#f5f0e8",
+        lineHeight: 1.65,
+        fontFamily: "'Georgia', serif",
+        whiteSpace: "pre-line",
+      }}>
+        {update.text}
+        {update.link && (
+          <>
+            {" "}
+            <a
+              href={update.link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: "#d4a843",
+                textDecoration: "underline",
+                textUnderlineOffset: 3,
+              }}
+            >
+              {update.link.label}
+            </a>
+          </>
+        )}
+      </div>
+      {hasExpanded && (
+        <>
+          {expanded && (
+            <div style={{
+              fontSize: 15,
+              color: "#f5f0e8",
+              lineHeight: 1.65,
+              fontFamily: "'Georgia', serif",
+              whiteSpace: "pre-line",
+              marginTop: 12,
+            }}>
+              {update.expandedText.split("\n\n").map((para, j) => {
+                const isBold = para === "The maps tell the story." ||
+                  para === "The process itself raised red flags." ||
+                  para.startsWith("The third and final reading");
+                return (
+                  <div key={j} style={{
+                    marginBottom: 12,
+                    fontWeight: isBold ? "bold" : "normal",
+                    fontStyle: isBold ? "italic" : "normal",
+                  }}>
+                    {para}
+                  </div>
+                );
+              })}
+              {update.expandedLinks && update.expandedLinks.map((link, k) => (
+                <div key={k} style={{ marginBottom: 8 }}>
+                  <a
+                    href={link.url}
+                    target={link.url.startsWith("mailto:") ? undefined : "_blank"}
+                    rel="noopener noreferrer"
+                    style={{
+                      color: "#d4a843",
+                      textDecoration: "underline",
+                      textUnderlineOffset: 3,
+                    }}
+                  >
+                    {link.label}
+                  </a>
+                </div>
+              ))}
+              {update.expandedFooter && (
+                <div style={{
+                  marginTop: 8,
+                  fontStyle: "italic",
+                  color: "#a8c5b0",
+                }}>
+                  {update.expandedFooter}
+                </div>
+              )}
+            </div>
+          )}
+          <button
+            onClick={() => setExpanded(!expanded)}
+            style={{
+              background: "none",
+              border: "none",
+              color: "#d4a843",
+              fontSize: 13,
+              fontFamily: "'Georgia', serif",
+              cursor: "pointer",
+              padding: "8px 0 0",
+              textDecoration: "underline",
+              textUnderlineOffset: 3,
+            }}
+          >
+            {expanded ? "▲ Show less" : "▼ Read more"}
+          </button>
+        </>
+      )}
+    </div>
+  );
+}
 
 export default function Petition() {
   return (
@@ -194,45 +338,7 @@ export default function Petition() {
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
             {UPDATES.map((update, i) => (
-              <div key={i} style={{
-                paddingLeft: 16,
-                borderLeft: "3px solid #d4a843",
-              }}>
-                <div style={{
-                  fontSize: 13,
-                  fontWeight: "bold",
-                  color: "#d4a843",
-                  marginBottom: 4,
-                  fontFamily: "'Georgia', serif",
-                }}>
-                  {update.date}
-                </div>
-                <div style={{
-                  fontSize: 15,
-                  color: "#f5f0e8",
-                  lineHeight: 1.65,
-                  fontFamily: "'Georgia', serif",
-                }}>
-                  {update.text}
-                  {update.link && (
-                    <>
-                      {" "}
-                      <a
-                        href={update.link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                          color: "#d4a843",
-                          textDecoration: "underline",
-                          textUnderlineOffset: 3,
-                        }}
-                      >
-                        {update.link.label}
-                      </a>
-                    </>
-                  )}
-                </div>
-              </div>
+              <UpdateEntry key={i} update={update} />
             ))}
           </div>
           <div style={{
