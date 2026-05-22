@@ -5,7 +5,17 @@ const UPDATES = [
     date: "May 20, 2026",
     heading: "Richland County's New Comprehensive Plan — What You Should Know",
     text: "While our community was focused on last night's Irmo Town Council vote, Richland County held a Special Called meeting to take its third step toward adopting a new comprehensive plan — the governing document that will shape land use decisions across the county for the next decade.\n\nWe've now had a chance to review both the current 2015 plan and the proposed 2025 draft side by side. The differences are significant and deserve community attention.",
-    expandedText: "The maps tell the story.\n\nThe 2015 Future Land Use Map shows street names throughout — you can find your road, your property, your neighborhood, and know exactly what land use designation applies. Boundaries are clear. Geography is anchored.\n\nThe proposed 2025 \"Conservation and Development Map\" shows no street names. Major route numbers only. Land use boundaries float without geographic reference. Large areas — particularly around lake properties — carry no designation at all, left as white margins open to staff interpretation. When a developer asks for a rezoning in one of these areas, staff will decide whether it \"complies\" with the plan. Without clear boundaries tied to real roads, that's a judgment call with no anchor.\n\nRural areas in northwest Richland County — our corridor — are reclassified in ways that invite higher density development. The new Broad River Road Mixed-Use Corridor designation runs directly through this area.\n\nThe process itself raised red flags. The public hearing for this plan was advertised at 6pm. The agenda, released less than 24 hours before the meeting, moved the start time to 5pm. Sign-up sheets for public comment were pulled at 5:15pm. Some residents who showed up at the advertised time were unable to participate.\n\nThe third and final reading is tentatively scheduled for June 2nd. That is less than two weeks away.\n\nIf you have concerns about how this plan affects your property or your community, contact Richland County Council. Jason Branham is our district representative.",
+    expandedText: "The maps tell the story.\n\nThe 2015 Future Land Use Map shows street names throughout — you can find your road, your property, your neighborhood, and know exactly what land use designation applies. Boundaries are clear. Geography is anchored.\n\nThe proposed 2025 \"Conservation and Development Map\" shows no street names. Major route numbers only. Land use boundaries float without geographic reference. Large areas — particularly around lake properties — carry no designation at all, left as white margins open to staff interpretation. When a developer asks for a rezoning in one of these areas, staff will decide whether it \"complies\" with the plan. Without clear boundaries tied to real roads, that's a judgment call with no anchor.",
+    mapComparison: {
+      heading: "See For Yourself — Compare the Maps",
+      subtext: "The difference between the 2015 map and the 2025 draft is stark. The 2015 map shows named roads and clear boundaries. The 2025 draft removes street names entirely and leaves large areas with no land use designation.",
+      buttons: [
+        { label: "View 2015 Map (Current)", url: "/2015-future-land-use-map.pdf" },
+        { label: "View 2025 Draft Map (Proposed)", url: "/2025-conservation-development-map-draft.pdf" },
+      ],
+      footer: "Both maps are also available for download.",
+    },
+    expandedTextContinued: "Rural areas in northwest Richland County — our corridor — are reclassified in ways that invite higher density development. The new Broad River Road Mixed-Use Corridor designation runs directly through this area.\n\nThe process itself raised red flags. The public hearing for this plan was advertised at 6pm. The agenda, released less than 24 hours before the meeting, moved the start time to 5pm. Sign-up sheets for public comment were pulled at 5:15pm. Some residents who showed up at the advertised time were unable to participate.\n\nThe third and final reading is tentatively scheduled for June 2nd. That is less than two weeks away.\n\nIf you have concerns about how this plan affects your property or your community, contact Richland County Council. Jason Branham is our district representative.",
     expandedLinks: [
       {
         url: "mailto:branham.jason@richlandcountysc.gov",
@@ -161,6 +171,87 @@ function UpdateEntry({ update }) {
                   para.startsWith("The third and final reading");
                 return (
                   <div key={j} style={{
+                    marginBottom: 12,
+                    fontWeight: isBold ? "bold" : "normal",
+                    fontStyle: isBold ? "italic" : "normal",
+                  }}>
+                    {para}
+                  </div>
+                );
+              })}
+              {update.mapComparison && (
+                <div style={{
+                  background: "#0d1f16",
+                  padding: "20px 24px",
+                  marginTop: 16,
+                  marginBottom: 16,
+                  borderLeft: "3px solid #d4a843",
+                }}>
+                  <div style={{
+                    fontSize: 16,
+                    fontWeight: "bold",
+                    color: "#d4a843",
+                    marginBottom: 8,
+                    fontFamily: "'Georgia', serif",
+                  }}>
+                    {update.mapComparison.heading}
+                  </div>
+                  <div style={{
+                    fontSize: 14,
+                    color: "#a8c5b0",
+                    lineHeight: 1.6,
+                    marginBottom: 16,
+                    fontFamily: "'Georgia', serif",
+                  }}>
+                    {update.mapComparison.subtext}
+                  </div>
+                  <div style={{
+                    display: "flex",
+                    gap: 12,
+                    flexWrap: "wrap",
+                    marginBottom: 12,
+                  }}>
+                    {update.mapComparison.buttons.map((btn, b) => (
+                      <a
+                        key={b}
+                        href={btn.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          display: "inline-block",
+                          background: "#1c3a2a",
+                          color: "#f5f0e8",
+                          border: "1px solid #d4a843",
+                          padding: "10px 20px",
+                          fontSize: 14,
+                          fontFamily: "'Georgia', serif",
+                          textDecoration: "none",
+                          letterSpacing: "0.04em",
+                          cursor: "pointer",
+                          flex: "1 1 200px",
+                          textAlign: "center",
+                          minWidth: 200,
+                        }}
+                      >
+                        {btn.label}
+                      </a>
+                    ))}
+                  </div>
+                  <div style={{
+                    fontSize: 12,
+                    color: "#a8c5b0",
+                    fontFamily: "'Georgia', serif",
+                    fontStyle: "italic",
+                  }}>
+                    {update.mapComparison.footer}
+                  </div>
+                </div>
+              )}
+              {update.expandedTextContinued && update.expandedTextContinued.split("\n\n").map((para, j) => {
+                const isBold = para === "The process itself raised red flags." ||
+                  para.startsWith("The third and final reading");
+                return (
+                  <div key={`cont-${j}`} style={{
                     marginBottom: 12,
                     fontWeight: isBold ? "bold" : "normal",
                     fontStyle: isBold ? "italic" : "normal",
