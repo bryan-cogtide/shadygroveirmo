@@ -16,6 +16,12 @@ const UPDATES = [
   },
   {
     date: "May 19, 2026",
+    heading: "Also That Night: PrimeSpace Storage Expansion Passes First Reading — A Question Worth Asking",
+    text: "On the same evening the Shady Grove development was rejected, Irmo Town Council passed the first reading of a conditional rezoning for PrimeSpace Storage at 7949 Broad River Road (Ordinance 26-11), allowing a 42,000 square foot expansion of an existing self-storage facility with conditions including landscaping and façade improvements.",
+    expandedText: "Here's the detail worth noting: in 2023, Irmo Town Council specifically moved self-storage out of the General Commercial zone, limiting it to Light Manufacturing zones only. Tuesday's approval carved out a special exception for this one property — effectively reversing a decision the council made just two years ago.\n\nThe conditions attached are meaningful — upgraded landscaping, façade improvements, no outdoor or contractor storage. But the broader question remains: is more storage space on Broad River Road consistent with the kind of growth Irmo actually wants for that corridor? We're tracking this through its second reading and will report back.",
+  },
+  {
+    date: "May 19, 2026",
     text: "Town Council voted 4-1 to reject Ordinance 26-12 on first reading. The proposed development is dead in its current form. Thank you to everyone who signed, showed up, and made your voice heard.",
   },
   {
