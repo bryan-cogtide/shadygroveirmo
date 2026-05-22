@@ -52,6 +52,88 @@ const UPDATES = [
   },
 ];
 
+const COUNTY_COUNCIL_MEMBERS = [
+  {
+    name: "Jason Branham",
+    title: "District 1 (Our District)",
+    phone: "(803) 542-0002",
+    phoneLink: "tel:+18035420002",
+    email: "branham.jason@richlandcountysc.gov",
+    highlight: true,
+    note: "Voted NO on the comp plan. Our ally on this fight.",
+  },
+  {
+    name: "Derrek Pugh",
+    title: "District 2 (Vice Chair)",
+    phone: "(803) 977-4339",
+    phoneLink: "tel:+18039774339",
+    email: "pugh.derrek@richlandcountysc.gov",
+  },
+  {
+    name: "Tyra Little",
+    title: "District 3",
+    phone: "(803) 422-0203",
+    phoneLink: "tel:+18034220203",
+    email: "little.tyra@richlandcountysc.gov",
+  },
+  {
+    name: "Paul Livingston",
+    title: "District 4",
+    phone: "(803) 576-5463",
+    phoneLink: "tel:+18035765463",
+    email: "livingston.paul@richlandcountysc.gov",
+  },
+  {
+    name: "Allison Terracio",
+    title: "District 5",
+    phone: "(803) 622-6029",
+    phoneLink: "tel:+18036226029",
+    email: "terracio.allison@richlandcountysc.gov",
+  },
+  {
+    name: "Don Weaver",
+    title: "District 6",
+    phone: "(803) 995-3703",
+    phoneLink: "tel:+18039953703",
+    email: "weaver.don@richlandcountysc.gov",
+  },
+  {
+    name: "Gretchen Cooper",
+    title: "District 7",
+    phone: "(803) 977-4337",
+    phoneLink: "tel:+18039774337",
+    email: "cooper.gretchen@richlandcountysc.gov",
+  },
+  {
+    name: "Tish Dozier Alleyne",
+    title: "District 8",
+    phone: "(803) 457-2597",
+    phoneLink: "tel:+18034572597",
+    email: "alleyne.tish@richlandcountysc.gov",
+  },
+  {
+    name: "Jesica Mackey",
+    title: "District 9 (Chair)",
+    phone: "(803) 977-4338",
+    phoneLink: "tel:+18039774338",
+    email: "mackey.jesica@richlandcountysc.gov",
+  },
+  {
+    name: "Cheryl English",
+    title: "District 10",
+    phone: "(803) 949-0770",
+    phoneLink: "tel:+18039490770",
+    email: "english.cheryl@richlandcountysc.gov",
+  },
+  {
+    name: "Chakisse Newton",
+    title: "District 11",
+    phone: "(803) 973-9652",
+    phoneLink: "tel:+18039739652",
+    email: "newton.chakisse@richlandcountysc.gov",
+  },
+];
+
 const COUNCIL_MEMBERS = [
   {
     name: "Bill Danielson",
@@ -550,6 +632,120 @@ export default function Petition() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Your Richland County Council */}
+        <div style={{
+          background: "#1c3a2a",
+          padding: "24px 28px",
+          marginBottom: 32,
+        }}>
+          <div style={{
+            fontSize: 11,
+            letterSpacing: "0.15em",
+            textTransform: "uppercase",
+            color: "#d4a843",
+            marginBottom: 16,
+            fontFamily: "'Georgia', serif",
+          }}>
+            Your Richland County Council
+          </div>
+
+          <div style={{
+            fontSize: 15,
+            color: "#f5f0e8",
+            lineHeight: 1.65,
+            marginBottom: 20,
+            fontFamily: "'Georgia', serif",
+          }}>
+            The Richland County comprehensive plan goes to a final vote on June 2nd. Contact your representatives — all of them — before then. Jason Branham (District 1) was the lone NO vote on the plan and has raised the possibility of deferral. The other ten members voted yes.
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 20 }}>
+            {COUNTY_COUNCIL_MEMBERS.map((member, i) => (
+              <div
+                key={i}
+                style={{
+                  background: member.highlight ? "#2a2410" : "#0d1f16",
+                  padding: "14px 16px",
+                  borderLeft: member.highlight ? "3px solid #d4a843" : "3px solid #2d5c42",
+                  borderRight: member.highlight ? "1px solid #d4a843" : undefined,
+                  borderTop: member.highlight ? "1px solid #d4a843" : undefined,
+                  borderBottom: member.highlight ? "1px solid #d4a843" : undefined,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 6,
+                }}
+              >
+                <div style={{
+                  fontSize: 14,
+                  fontWeight: "bold",
+                  color: member.highlight ? "#d4a843" : "#f5f0e8",
+                  fontFamily: "'Georgia', serif",
+                }}>
+                  {member.name}
+                </div>
+                <div style={{
+                  fontSize: 12,
+                  color: "#a8c5b0",
+                  fontFamily: "'Georgia', serif",
+                }}>
+                  {member.title}
+                </div>
+                {member.note && (
+                  <div style={{
+                    fontSize: 12,
+                    color: "#d4a843",
+                    fontStyle: "italic",
+                    fontFamily: "'Georgia', serif",
+                  }}>
+                    {member.note}
+                  </div>
+                )}
+                <div style={{
+                  display: "flex",
+                  gap: 16,
+                  fontSize: 13,
+                  marginTop: 4,
+                  flexWrap: "wrap",
+                }}>
+                  <a
+                    href={member.phoneLink}
+                    style={{
+                      color: "#d4a843",
+                      textDecoration: "none",
+                      fontFamily: "'Georgia', serif",
+                    }}
+                  >
+                    {member.phone}
+                  </a>
+                  <a
+                    href={`mailto:${member.email}`}
+                    style={{
+                      color: "#d4a843",
+                      textDecoration: "underline",
+                      textUnderlineOffset: 3,
+                      fontFamily: "'Georgia', serif",
+                    }}
+                  >
+                    {member.email}
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{
+            fontSize: 14,
+            color: "#a8c5b0",
+            lineHeight: 1.65,
+            fontFamily: "'Georgia', serif",
+            fontStyle: "italic",
+            paddingTop: 12,
+            borderTop: "1px solid #2d5c42",
+          }}>
+            The June 2nd vote is the last opportunity to push for deferral or amendments before this plan becomes official. Be brief, be respectful, and ask them to defer until road names and clear boundaries are restored to the map.
           </div>
         </div>
 
