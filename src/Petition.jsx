@@ -2,6 +2,16 @@ import { useState } from "react";
 
 const UPDATES = [
   {
+    date: "May 29, 2026",
+    heading: "Two Meetings — Same Night — Tuesday June 2nd",
+    text: "This Tuesday at 6 PM our community needs to be in two places at once. The Irmo Town Council is holding a workshop at 7300 Woodrow Street covering Broad River Road development including the PrimeSpace Storage expansion. At the same time, Richland County Council holds its final public hearing on the Reimagine Richland comprehensive plan at 2020 Hampton Street in Columbia — the document that governs most of our properties for the next decade. Jason Branham, our District 1 rep and the lone NO vote on first reading, needs community support in that room. If you're near Irmo, go to 7300 Woodrow Street. If you're closer to Columbia, go to 2020 Hampton Street. If you can't attend either, email your Richland County Council representatives — contact info is on this page.",
+  },
+  {
+    date: "May 29, 2026",
+    heading: "What Vision Does Irmo Have for Broad River Road?",
+    text: "The PrimeSpace Storage expansion at 7949 Broad River Road is moving toward a second reading. In 2023, Irmo Town Council moved self-storage facilities out of the General Commercial zone entirely — limiting them to Light Manufacturing zones only. Tuesday's workshop is a chance to ask whether carving out special exceptions for more storage units reflects the vision Irmo should have for that corridor. We think Broad River Road deserves better than storage units and car washes. Come to the workshop and say so: Tuesday June 2, 6:00 PM, Irmo Municipal Building, 7300 Woodrow Street.",
+  },
+  {
     date: "May 20, 2026",
     heading: "Richland County's New Comprehensive Plan — What You Should Know",
     text: "While our community was focused on last night's Irmo Town Council vote, Richland County held a Special Called meeting to take its third step toward adopting a new comprehensive plan — the governing document that will shape land use decisions across the county for the next decade.\n\nWe've now had a chance to review both the current 2015 plan and the proposed 2025 draft side by side. The differences are significant and deserve community attention.",
