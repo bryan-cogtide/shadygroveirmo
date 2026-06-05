@@ -2,6 +2,28 @@ import { useState } from "react";
 
 const UPDATES = [
   {
+    date: "June 5, 2026",
+    heading: "Newberry County Unanimously Denies Project Altair Data Center",
+    text: "While outside our direct corridor, this is worth noting: Newberry County Council voted unanimously this week to deny the land-sale ordinance required for Project Altair, a large-scale data center proposal, and placed a 12-month moratorium on all new data center permits in the county. The project had faced intense community pushback. It’s further proof that organized, engaged communities make a difference. We proved it here two weeks ago. Newberry County proved it this week.",
+  },
+  {
+    date: "June 5, 2026",
+    heading: "Richland County Comp Plan Deferred to June 16th",
+    text: "Richland County Council deferred the second reading of the Reimagine Richland comprehensive plan to June 16th. Jason Branham — our District 1 representative and the lone NO vote on first reading — led the charge on that deferral. Council members were to submit proposed revisions by June 5th. We’ll have more information as the June 16th date approaches and will keep you updated here.",
+    expandedText: "If you’d like to thank Jason Branham for his work representing our district, his email is linked below.",
+    expandedLinks: [
+      {
+        url: "mailto:branham.jason@richlandcountysc.gov",
+        label: "branham.jason@richlandcountysc.gov",
+      },
+    ],
+  },
+  {
+    date: "June 5, 2026",
+    heading: "PrimeSpace Storage — Second Reading Pushed to July",
+    text: "At Tuesday’s Irmo Town Council workshop, council members determined the PrimeSpace Storage expansion wasn’t ready for a second reading. Between inadequate setbacks from the upcoming Broad River Road widening, insufficient detail on elevation renderings, and unacceptable building materials, the developer must submit new drawings before this moves forward — effectively pushing the second reading to July at the earliest. The process is working. That said, consistent presence at council meetings matters even between votes. The June Irmo Town Council meeting is still worth attending to signal that this community is paying attention.",
+  },
+  {
     date: "May 29, 2026",
     heading: "Two Meetings — Same Night — Tuesday June 2nd",
     text: "This Tuesday at 6 PM our community needs to be in two places at once. The Irmo Town Council is holding a workshop at 7300 Woodrow Street covering Broad River Road development including the PrimeSpace Storage expansion. At the same time, Richland County Council holds its final public hearing on the Reimagine Richland comprehensive plan at 2020 Hampton Street in Columbia — the document that governs most of our properties for the next decade. Jason Branham, our District 1 rep and the lone NO vote on first reading, needs community support in that room. If you're near Irmo, go to 7300 Woodrow Street. If you're closer to Columbia, go to 2020 Hampton Street. If you can't attend either, email your Richland County Council representatives — contact info is on this page.",
