@@ -20,8 +20,8 @@ const UPDATES = [
   },
   {
     date: "June 5, 2026",
-    heading: "PrimeSpace Storage — Second Reading Pushed to July",
-    text: "At Tuesday’s Irmo Town Council workshop, council members determined the PrimeSpace Storage expansion wasn’t ready for a second reading. Between inadequate setbacks from the upcoming Broad River Road widening, insufficient detail on elevation renderings, and unacceptable building materials, the developer must submit new drawings before this moves forward — effectively pushing the second reading to July at the earliest. The process is working. That said, consistent presence at council meetings matters even between votes. The June Irmo Town Council meeting is still worth attending to signal that this community is paying attention.",
+    heading: "PrimeSpace Storage — Second Reading on June 16th Agenda",
+    text: "At Tuesday’s Irmo Town Council workshop, council members determined the PrimeSpace Storage expansion wasn’t ready for a second reading. Between inadequate setbacks from the upcoming Broad River Road widening, insufficient detail on elevation renderings, and unacceptable building materials, the developer must submit new drawings before this moves forward. The developer turned around revised drawings within days and the item has been placed on the June 16th Town Council agenda. The process is working. That said, consistent presence at council meetings matters even between votes. The June Irmo Town Council meeting is still worth attending to signal that this community is paying attention.",
   },
   {
     date: "May 29, 2026",
