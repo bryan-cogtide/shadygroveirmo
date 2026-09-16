@@ -443,35 +443,6 @@ export default function Petition() {
       fontFamily: "'Georgia', 'Times New Roman', serif",
       color: "#1a1a1a",
     }}>
-      {/* Victory Banner */}
-      <div style={{
-        background: "#d4a843",
-        padding: "40px 24px",
-        textAlign: "center",
-      }}>
-        <div style={{ maxWidth: 720, margin: "0 auto" }}>
-          <div style={{
-            fontSize: "clamp(36px, 8vw, 56px)",
-            fontWeight: "bold",
-            color: "#1c3a2a",
-            marginBottom: 16,
-            fontFamily: "'Georgia', serif",
-          }}>
-            We Won. 4-1.
-          </div>
-          <div style={{
-            fontSize: 16,
-            color: "#1c3a2a",
-            lineHeight: 1.7,
-            fontFamily: "'Georgia', serif",
-            maxWidth: 600,
-            margin: "0 auto",
-          }}>
-            On May 19, 2026, the Irmo Town Council voted 4-1 to reject Ordinance 26-12. That specific 330-unit American Community Developers proposal was stopped. If ACD returns, they start over from scratch — new application, new process, same community watching.
-          </div>
-        </div>
-      </div>
-
       {/* Header */}
       <div style={{
         background: "#1c3a2a",
