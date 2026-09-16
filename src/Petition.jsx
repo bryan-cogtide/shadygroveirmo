@@ -2,6 +2,18 @@ import { useState } from "react";
 
 const UPDATES = [
   {
+    date: "August 20, 2026",
+    heading: "Heads Up: The Developer May Be Coming Back",
+    text: "It has been a quiet summer, but quiet does not always mean nothing is happening. We have received credible information suggesting that the developer behind the proposed Shady Grove Road development may be returning with a similar plan, potentially as early as September. We do not have official details yet, and we are not raising an alarm, but we want neighbors to hear it here before finding a sign in the ground.",
+    expandedText: "When we have confirmed details, we will share them immediately on this page and through the email list. In the meantime, if you see anything posted near 1424 Shady Grove Road, or hear anything through your own channels, please send it to hello@shadygroveirmo.org.\n\nThe community we built earlier this year is still here. We are still watching.",
+    expandedLinks: [
+      {
+        url: "mailto:hello@shadygroveirmo.org",
+        label: "hello@shadygroveirmo.org",
+      },
+    ],
+  },
+  {
     date: "June 5, 2026",
     heading: "Newberry County Unanimously Denies Project Altair Data Center",
     text: "While outside our direct corridor, this is worth noting: Newberry County Council voted unanimously this week to deny the land-sale ordinance required for Project Altair, a large-scale data center proposal, and placed a 12-month moratorium on all new data center permits in the county. The project had faced intense community pushback. It’s further proof that organized, engaged communities make a difference. We proved it here two weeks ago. Newberry County proved it this week.",
@@ -455,7 +467,7 @@ export default function Petition() {
             maxWidth: 600,
             margin: "0 auto",
           }}>
-            On May 19, 2026, the Irmo Town Council voted 4-1 to reject Ordinance 26-12. The proposed 330-unit American Community Developers development on Shady Grove Road is dead. If ACD ever returns, they start over from scratch — new application, new process, same community watching.
+            On May 19, 2026, the Irmo Town Council voted 4-1 to reject Ordinance 26-12. That specific 330-unit American Community Developers proposal was stopped. If ACD returns, they start over from scratch — new application, new process, same community watching.
           </div>
         </div>
       </div>
@@ -488,7 +500,7 @@ export default function Petition() {
               cursor: "default",
             }}
           >
-            We Won — And We're Just Getting Started.
+            It’s not over yet.
           </h1>
         </div>
       </div>
