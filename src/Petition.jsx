@@ -478,33 +478,6 @@ export default function Petition() {
 
       <div style={{ maxWidth: 720, margin: "0 auto", padding: "0 24px 60px" }}>
 
-        {/* Commemorative signature count */}
-        <div style={{
-          background: "#1c3a2a",
-          color: "#f5f0e8",
-          padding: "14px 24px",
-          display: "flex",
-          alignItems: "center",
-          gap: 16,
-          marginBottom: 32,
-        }}>
-          <div style={{
-            fontSize: 42,
-            fontWeight: "bold",
-            color: "#d4a843",
-            lineHeight: 1,
-            minWidth: 64,
-            textAlign: "center",
-          }}>
-            1,286
-          </div>
-          <div>
-            <div style={{ fontSize: 15, fontWeight: "bold" }}>
-              neighbors signed this petition in under two weeks.
-            </div>
-          </div>
-        </div>
-
         {/* Updates */}
         <div style={{
           background: "#1c3a2a",
