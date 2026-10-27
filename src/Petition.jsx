@@ -473,7 +473,7 @@ export default function Petition() {
             lineHeight: 1.2,
             letterSpacing: "-0.01em",
           }}>
-            Tomorrow Night: A 235-Acre Subdivision Off Shady Grove Road
+            Tonight: A 235-Acre Subdivision Off Shady Grove Road
           </h2>
           <div style={{ fontSize: 15, lineHeight: 1.65, marginBottom: 16 }}>
             <p style={{ margin: "0 0 12px" }}>
