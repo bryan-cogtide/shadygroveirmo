@@ -2,6 +2,15 @@ import { useState } from "react";
 
 const UPDATES = [
   {
+    date: "October 28, 2026",
+    heading: "Koon Road Case Deferred to November 19; St. Johns Road Case Monday",
+    text: "Richland County Council deferred Case 26-031 MA on October 27. The public hearing is now Thursday, November 19. Councilman Branham said publicly that the signage for the case was inadequate, and new signs must be posted at least 15 days before the hearing. The case will go directly to Council, not back to the Planning Commission.\n\nThe larger subdivision planned off Shady Grove Road involves land that is already largely zoned for housing. Our focus is shifting toward how it gets built, especially traffic on Shady Grove Road and access in and out of the development.\n\nSeparately, Case 26-039 MA, a request to rezone about 20 acres on the south side of St. Johns Road from HM to R2, is on the consent agenda for the Planning Commission on Monday, November 2 at 6:00 PM. Consent items pass in a single vote without discussion unless someone asks for them to be pulled at the start of the meeting. A neighbor has started a petition:",
+    link: {
+      url: "https://c.org/QjFH8sf8gp",
+      label: "https://c.org/QjFH8sf8gp",
+    },
+  },
+  {
     date: "October 26, 2026",
     heading: "Case 26-031 MA: Koon Road Rezoning Goes to County Council Tuesday",
     text: "A request to rezone four interior parcels totaling about 25 acres off Koon Road (TMS# R03400-02-15, 17, 18 & 19) from Homestead (HM) to R3 goes before Richland County Council at its Zoning Public Hearing on Tuesday, October 27 at 7:00 PM. The Planning Commission approved it 7-1 on October 5th.\n\nThe 25 acres matter because of what they connect. They join a 135-acre tract controlled by Haven Homes (Mungo) and an adjacent 74-acre tract into a single subdivision of roughly 235 acres. The 135-acre tract narrows to about 125 feet at its midpoint, with a powerline easement and creek buffers inside that width. Without these 25 acres, reaching the back half of that tract is very difficult. The developer has stated the primary entrance will be Broad Bill Road off Shady Grove Road.\n\nRichland County’s 2021 Land Development Code requires public hearing signs to list the address or tax map number of the property affected. The signs for this case did not. One sign was posted at Koon Road and Annie Adkins Road, in front of a different parcel, and few affected residents attended the Planning Commission hearing as a result.\n\nWe are asking Council to defer this case until it is properly re-noticed, or to deny the R3 rezoning. Contact information for every council member is on this page.",
@@ -448,13 +457,14 @@ export default function Petition() {
       fontFamily: "'Georgia', 'Times New Roman', serif",
       color: "#1a1a1a",
     }}>
-      {/* Urgent alert: Case 26-031 MA. Remove this whole block after Oct 27, 2026. */}
+      {/* Urgent alert: Case 26-039 MA (Nov 2) and Case 26-031 MA (Nov 19). Remove Part A after the Nov 2 Planning Commission meeting; remove this whole block after Nov 19, 2026. */}
       <div id="alert-26-031" style={{
         background: "#8b1e1e",
         color: "#ffffff",
         borderBottom: "4px solid #5c1010",
       }}>
         <div style={{ maxWidth: 720, margin: "0 auto", padding: "28px 24px 26px" }}>
+          {/* Part A: Case 26-039 MA, Nov 2. Remove after the Nov 2 meeting. */}
           <div style={{
             fontSize: 11,
             letterSpacing: "0.2em",
@@ -463,7 +473,7 @@ export default function Petition() {
             marginBottom: 10,
             fontFamily: "'Georgia', serif",
           }}>
-            Richland County · Zoning Public Hearing
+            Planning Commission · Monday, November 2
           </div>
           <h2 style={{
             fontSize: "clamp(22px, 5vw, 32px)",
@@ -473,14 +483,14 @@ export default function Petition() {
             lineHeight: 1.2,
             letterSpacing: "-0.01em",
           }}>
-            Tonight: A 235-Acre Subdivision Off Shady Grove Road
+            St. Johns Road Rezoning Could Pass Monday Without Discussion
           </h2>
           <div style={{ fontSize: 15, lineHeight: 1.65, marginBottom: 16 }}>
             <p style={{ margin: "0 0 12px" }}>
-              Case 26-031 MA asks Richland County Council to rezone 25 acres off Koon Road from Homestead to R3 (up to 6 homes per acre). Those 25 acres connect a 135-acre tract and a 74-acre tract into one roughly 235-acre subdivision planned by Haven Homes (Mungo), with its main entrance at Broad Bill Road, just off Shady Grove Road at the I-26 bridge.
+              Case 26-039 MA asks to rezone about 20 acres on the south side of St. Johns Road (TMS R03500-04-17) from Homestead (HM) to R2.
             </p>
             <p style={{ margin: 0 }}>
-              County code requires rezoning signs to list the property address or tax map number. These didn’t, and most of the affected neighbors never knew the October 5th Planning Commission hearing happened.
+              It’s on the consent agenda, which means it will be approved with a batch of routine items in a single vote unless someone asks for it to be pulled. Any member of the public can ask, at the start of the meeting.
             </p>
           </div>
           <div style={{
@@ -492,14 +502,77 @@ export default function Petition() {
             fontWeight: "bold",
             lineHeight: 1.6,
           }}>
-            <div>Tuesday, October 27 · 7:00 PM</div>
-            <div>Arrive by 6:30 PM to sign up to speak</div>
-            <div>Richland County Council Chambers, 2nd Floor, 2020 Hampton Street, Columbia</div>
-            <div>Wear red.</div>
+            <div>Monday, November 2 · 6:00 PM</div>
+            <div>County Council Chambers, 2nd Floor, 2020 Hampton Street, Columbia</div>
+            <div>Arrive early and sign the sign-in sheet at the back of the room for Case 26-039 MA</div>
           </div>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 14 }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
             <a
-              href="mailto:branham.jason@richlandcountysc.gov?subject=Case%2026-031%20MA%20-%20Please%20defer%20or%20deny"
+              href="https://c.org/QjFH8sf8gp"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                flex: "1 1 240px",
+                background: "#ffffff",
+                color: "#8b1e1e",
+                padding: "12px 16px",
+                textAlign: "center",
+                fontWeight: "bold",
+                fontSize: 15,
+                textDecoration: "none",
+              }}
+            >
+              Sign the St. Johns Road Petition
+            </a>
+          </div>
+
+          <hr style={{ border: 0, borderTop: "1px solid rgba(255, 255, 255, 0.45)", margin: "26px 0" }} />
+
+          {/* Part B: Case 26-031 MA, Nov 19 */}
+          <div style={{
+            fontSize: 11,
+            letterSpacing: "0.2em",
+            textTransform: "uppercase",
+            color: "#ffd9d9",
+            marginBottom: 10,
+            fontFamily: "'Georgia', serif",
+          }}>
+            Richland County Council · Case 26-031 MA
+          </div>
+          <h2 style={{
+            fontSize: "clamp(22px, 5vw, 32px)",
+            fontWeight: "bold",
+            color: "#ffffff",
+            margin: "0 0 14px",
+            lineHeight: 1.2,
+            letterSpacing: "-0.01em",
+          }}>
+            Koon Road Rezoning Deferred to Thursday, November 19
+          </h2>
+          <div style={{ fontSize: 15, lineHeight: 1.65, marginBottom: 16 }}>
+            <p style={{ margin: "0 0 12px" }}>
+              Case 26-031 MA, the Koon Road rezoning tied to the large subdivision planned off Shady Grove Road, was deferred on October 27. Councilman Branham said publicly that the signage for this case was inadequate. New signs must go up at least 15 days before the hearing.
+            </p>
+            <p style={{ margin: 0 }}>
+              This subdivision is bigger than one vote. Much of the land is already zoned for housing, so our focus is on how it gets built: traffic on Shady Grove and how people will get in and out. We’ll share what we learn before the 19th.
+            </p>
+          </div>
+          <div style={{
+            background: "rgba(0, 0, 0, 0.22)",
+            borderLeft: "3px solid #ffffff",
+            padding: "12px 16px",
+            marginBottom: 18,
+            fontSize: 15,
+            fontWeight: "bold",
+            lineHeight: 1.6,
+          }}>
+            <div>Thursday, November 19</div>
+            <div>County Council Chambers, 2nd Floor, 2020 Hampton Street, Columbia</div>
+            <div>Time to be confirmed. We need a full room.</div>
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+            <a
+              href="mailto:branham.jason@richlandcountysc.gov?subject=Case%2026-031%20MA%20-%20Traffic%20on%20Shady%20Grove%20Road"
               style={{
                 flex: "1 1 240px",
                 background: "#ffffff",
@@ -529,9 +602,6 @@ export default function Petition() {
             >
               Contact the Full County Council
             </a>
-          </div>
-          <div style={{ fontSize: 14, lineHeight: 1.55, color: "#ffe9e9", fontStyle: "italic" }}>
-            The ask: defer Case 26-031 MA until it is properly re-noticed with parcel numbers on the sign, as county code requires, or deny the R3 rezoning.
           </div>
         </div>
       </div>
