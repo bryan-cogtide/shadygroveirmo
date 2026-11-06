@@ -2,6 +2,11 @@ import { useState } from "react";
 
 const UPDATES = [
   {
+    date: "November 6, 2026",
+    heading: "Koon Road and St. Johns Road Cases Both Go to Council November 19",
+    text: "Two District 1 rezoning cases go before Richland County Council at its Zoning Public Hearing on Thursday, November 19 at 7:00 PM, 2020 Hampton Street.\n\n**Koon Road (Case 26-031 MA).** After meetings with county officials and a review of county records, we expect Council to approve this 25-acre rezoning. The county’s position is that it can’t reconsider the 135 acres next door, which are already zoned for housing. The likely layout is two neighborhoods, each with its own entrance, one toward Broad Bill Road off Shady Grove and one toward Koon Road. Road requirements such as turn lanes, signals and the timing of improvements will be set by SCDOT, which is already involved. That is where neighbors can still make a difference, and it’s where our attention is turning.\n\n**St. Johns Road (Case 26-039 MA).** A request to rezone about 20 acres on the south side of St. Johns Road (TMS R03500-04-17) from Homestead (HM) to R2. Current HM zoning allows roughly 13 homes on the tract. R2 allows up to 3 homes per acre, or roughly 60. According to neighbors who attended, the Planning Commission sent it forward on November 2 with one “no” vote. A neighbor has started a petition: https://c.org/QjFH8sf8gp\n\nQuestions for the county: Zoning office, 803-576-2190.",
+  },
+  {
     date: "October 28, 2026",
     heading: "Koon Road Case Deferred to November 19; St. Johns Road Case Monday",
     text: "Richland County Council deferred Case 26-031 MA on October 27. The public hearing is now Thursday, November 19. Councilman Branham said publicly that the signage for the case was inadequate, and new signs must be posted at least 15 days before the hearing. The case will go directly to Council, not back to the Planning Commission.\n\nThe larger subdivision planned off Shady Grove Road involves land that is already largely zoned for housing. Our focus is shifting toward how it gets built, especially traffic on Shady Grove Road and access in and out of the development.\n\nSeparately, Case 26-039 MA, a request to rezone about 20 acres on the south side of St. Johns Road from HM to R2, is on the consent agenda for the Planning Commission on Monday, November 2 at 6:00 PM. Consent items pass in a single vote without discussion unless someone asks for them to be pulled at the start of the meeting. A neighbor has started a petition:",
@@ -239,6 +244,29 @@ const PETITION_TEXT = `We, the undersigned residents of the neighborhoods adjace
 
 A development of this scale — 330 units including 200 workforce apartments, 90 senior duplexes, and 40 single-family homes — represents a fundamental change to our neighborhood. We ask that the Town proceed with caution and ensure all impact studies are complete before any approvals are granted.`;
 
+// Renders **bold** spans and bare https:// URLs (as new-tab links) inside feed text.
+function formatText(text) {
+  return text.split(/(\*\*.+?\*\*|https:\/\/\S+)/).map((part, i) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return <strong key={i}>{part.slice(2, -2)}</strong>;
+    }
+    if (part.startsWith("https://")) {
+      return (
+        <a
+          key={i}
+          href={part}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "#d4a843", textDecoration: "underline", textUnderlineOffset: 3 }}
+        >
+          {part}
+        </a>
+      );
+    }
+    return part;
+  });
+}
+
 function UpdateEntry({ update }) {
   const [expanded, setExpanded] = useState(false);
   const hasExpanded = !!update.expandedText;
@@ -275,7 +303,7 @@ function UpdateEntry({ update }) {
         fontFamily: "'Georgia', serif",
         whiteSpace: "pre-line",
       }}>
-        {update.text}
+        {formatText(update.text)}
         {update.link && (
           <>
             {" "}
@@ -457,14 +485,31 @@ export default function Petition() {
       fontFamily: "'Georgia', 'Times New Roman', serif",
       color: "#1a1a1a",
     }}>
-      {/* Urgent alert: Case 26-039 MA (Nov 2) and Case 26-031 MA (Nov 19). Remove Part A after the Nov 2 Planning Commission meeting; remove this whole block after Nov 19, 2026. */}
+      {/* Urgent alert: Nov 19 Council hearing for Cases 26-031 MA and 26-039 MA. Replace this block after the Nov 19, 2026 meeting with the outcome. */}
       <div id="alert-26-031" style={{
         background: "#8b1e1e",
         color: "#ffffff",
         borderBottom: "4px solid #5c1010",
       }}>
+        <style>{`
+          #alert-26-031 .alert-cases { display: flex; margin-bottom: 20px; }
+          #alert-26-031 .alert-case { flex: 1 1 0; min-width: 0; }
+          #alert-26-031 .alert-case + .alert-case {
+            border-left: 1px solid rgba(255, 255, 255, 0.45);
+            margin-left: 22px;
+            padding-left: 22px;
+          }
+          @media (max-width: 640px) {
+            #alert-26-031 .alert-cases { flex-direction: column; }
+            #alert-26-031 .alert-case + .alert-case {
+              border-left: 0;
+              border-top: 1px solid rgba(255, 255, 255, 0.45);
+              margin: 22px 0 0;
+              padding: 22px 0 0;
+            }
+          }
+        `}</style>
         <div style={{ maxWidth: 720, margin: "0 auto", padding: "28px 24px 26px" }}>
-          {/* Part A: Case 26-039 MA, Nov 2. Remove after the Nov 2 meeting. */}
           <div style={{
             fontSize: 11,
             letterSpacing: "0.2em",
@@ -473,7 +518,7 @@ export default function Petition() {
             marginBottom: 10,
             fontFamily: "'Georgia', serif",
           }}>
-            Planning Commission · Monday, November 2
+            Richland County Council · Zoning Public Hearing
           </div>
           <h2 style={{
             fontSize: "clamp(22px, 5vw, 32px)",
@@ -483,96 +528,61 @@ export default function Petition() {
             lineHeight: 1.2,
             letterSpacing: "-0.01em",
           }}>
-            St. Johns Road Rezoning Could Pass Monday Without Discussion
+            Two Rezonings Near Us Go to County Council November 19
           </h2>
-          <div style={{ fontSize: 15, lineHeight: 1.65, marginBottom: 16 }}>
-            <p style={{ margin: "0 0 12px" }}>
-              Case 26-039 MA asks to rezone about 20 acres on the south side of St. Johns Road (TMS R03500-04-17) from Homestead (HM) to R2.
-            </p>
-            <p style={{ margin: 0 }}>
-              It’s on the consent agenda, which means it will be approved with a batch of routine items in a single vote unless someone asks for it to be pulled. Any member of the public can ask, at the start of the meeting.
-            </p>
-          </div>
           <div style={{
             background: "rgba(0, 0, 0, 0.22)",
             borderLeft: "3px solid #ffffff",
             padding: "12px 16px",
-            marginBottom: 18,
+            marginBottom: 22,
             fontSize: 15,
             fontWeight: "bold",
             lineHeight: 1.6,
           }}>
-            <div>Monday, November 2 · 6:00 PM</div>
+            <div>Thursday, November 19 · 7:00 PM</div>
             <div>County Council Chambers, 2nd Floor, 2020 Hampton Street, Columbia</div>
-            <div>Arrive early and sign the sign-in sheet at the back of the room for Case 26-039 MA</div>
-          </div>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
-            <a
-              href="https://c.org/QjFH8sf8gp"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                flex: "1 1 240px",
-                background: "#ffffff",
-                color: "#8b1e1e",
-                padding: "12px 16px",
-                textAlign: "center",
-                fontWeight: "bold",
-                fontSize: 15,
-                textDecoration: "none",
-              }}
-            >
-              Sign the St. Johns Road Petition
-            </a>
+            <div>Arrive early and sign up to speak on the case you care about</div>
           </div>
 
-          <hr style={{ border: 0, borderTop: "1px solid rgba(255, 255, 255, 0.45)", margin: "26px 0" }} />
+          <div className="alert-cases">
+            <div className="alert-case">
+              <h3 style={{ fontSize: 18, fontWeight: "bold", margin: "0 0 8px", lineHeight: 1.3 }}>
+                Koon Road · Case 26-031 MA
+              </h3>
+              <p style={{ fontSize: 15, lineHeight: 1.65, margin: 0 }}>
+                25 acres tied to the large subdivision planned off Shady Grove Road. Council is expected to approve it. The likely layout is two neighborhoods, each with its own entrance: one toward Broad Bill Road off Shady Grove, and one toward Koon Road. SCDOT will decide the road requirements, and that’s where our focus is going next.
+              </p>
+            </div>
+            <div className="alert-case">
+              <h3 style={{ fontSize: 18, fontWeight: "bold", margin: "0 0 8px", lineHeight: 1.3 }}>
+                St. Johns Road · Case 26-039 MA
+              </h3>
+              <p style={{ fontSize: 15, lineHeight: 1.65, margin: "0 0 14px" }}>
+                About 20 acres on the south side of St. Johns Road (TMS R03500-04-17), near Shady Grove United Methodist Church, from Homestead (HM) to R2. That’s roughly 13 homes allowed today versus up to about 60 under R2. The Planning Commission sent it forward on November 2 with one “no” vote.
+              </p>
+              <a
+                href="https://c.org/QjFH8sf8gp"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "block",
+                  background: "#ffffff",
+                  color: "#8b1e1e",
+                  padding: "12px 16px",
+                  textAlign: "center",
+                  fontWeight: "bold",
+                  fontSize: 15,
+                  textDecoration: "none",
+                }}
+              >
+                Sign the St. Johns Road Petition
+              </a>
+            </div>
+          </div>
 
-          {/* Part B: Case 26-031 MA, Nov 19 */}
-          <div style={{
-            fontSize: 11,
-            letterSpacing: "0.2em",
-            textTransform: "uppercase",
-            color: "#ffd9d9",
-            marginBottom: 10,
-            fontFamily: "'Georgia', serif",
-          }}>
-            Richland County Council · Case 26-031 MA
-          </div>
-          <h2 style={{
-            fontSize: "clamp(22px, 5vw, 32px)",
-            fontWeight: "bold",
-            color: "#ffffff",
-            margin: "0 0 14px",
-            lineHeight: 1.2,
-            letterSpacing: "-0.01em",
-          }}>
-            Koon Road Rezoning Deferred to Thursday, November 19
-          </h2>
-          <div style={{ fontSize: 15, lineHeight: 1.65, marginBottom: 16 }}>
-            <p style={{ margin: "0 0 12px" }}>
-              Case 26-031 MA, the Koon Road rezoning tied to the large subdivision planned off Shady Grove Road, was deferred on October 27. Councilman Branham said publicly that the signage for this case was inadequate. New signs must go up at least 15 days before the hearing.
-            </p>
-            <p style={{ margin: 0 }}>
-              This subdivision is bigger than one vote. Much of the land is already zoned for housing, so our focus is on how it gets built: traffic on Shady Grove and how people will get in and out. We’ll share what we learn before the 19th.
-            </p>
-          </div>
-          <div style={{
-            background: "rgba(0, 0, 0, 0.22)",
-            borderLeft: "3px solid #ffffff",
-            padding: "12px 16px",
-            marginBottom: 18,
-            fontSize: 15,
-            fontWeight: "bold",
-            lineHeight: 1.6,
-          }}>
-            <div>Thursday, November 19</div>
-            <div>County Council Chambers, 2nd Floor, 2020 Hampton Street, Columbia</div>
-            <div>Time to be confirmed. We need a full room.</div>
-          </div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
             <a
-              href="mailto:branham.jason@richlandcountysc.gov?subject=Case%2026-031%20MA%20-%20Traffic%20on%20Shady%20Grove%20Road"
+              href="mailto:branham.jason@richlandcountysc.gov?subject=Nov%2019%20rezonings%20near%20Shady%20Grove%20Road"
               style={{
                 flex: "1 1 240px",
                 background: "#ffffff",
